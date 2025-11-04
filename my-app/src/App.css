@@ -55,3 +55,27 @@
   background: url('./assets/stars.jpg') no-repeat center center fixed;
   background-size: cover;
 }
+
+svg:has(.pathHover:hover){
+  transform: scale(1.1);
+}
+/* 
+svg:has(.pathHover:hover) + .fillSquare {
+  height: 400px !important;
+} */
+
+svg{
+  pointer-events: none;
+}
+
+path{
+  pointer-events: auto;
+}
+
+.fillSquare{
+  pointer-events: auto;
+}
+
+.projectWave{
+  pointer-events: none;
+}
