@@ -48,7 +48,7 @@ function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className='absolute rounded-lg transition-all duration-500 w-full pointer-events-none'
+            className='absolute rounded-lg transition-all duration-500 w-full'
             onClick={() => window.open(project.url, '_blank')}
             style={{
               opacity: 1,

@@ -59,10 +59,10 @@
 svg:has(.pathHover:hover){
   transform: scale(1.1);
 }
-/* 
-svg:has(.pathHover:hover) + .fillSquare {
-  height: 400px !important;
-} */
+
+svg:has(+ .fillSquare:hover) {
+  transform: scale(1.1);
+}
 
 svg{
   pointer-events: none;
