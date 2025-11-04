@@ -1,0 +1,143 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Inicio galaxia */
+.svgGalaxy{
+  width: 20vw;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.svgGalaxy.animateGalaxy:hover{
+  cursor: pointer;
+  width: px;
+}
+
+.animateGalaxy{
+  animation: spin 20s linear infinite;
+}	
+
+.animateGalaxyIn{
+  transition: 1.25s ease-in-out;
+  animation: spin 3s linear infinite;
+  width: 300vw;
+  height: 100%;
+}
+
+.mainContainer{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html{
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+}
+body{
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+}
+
+.flashOff{
+  display: none;
+}
+
+.fondoLoco{
+background-color: #41831b;
+opacity: 0.8;
+background: linear-gradient(135deg, #38ff5655 25%, transparent 25%) -16px 0/ 32px 32px, linear-gradient(225deg, #38ff56 25%, transparent 25%) -16px 0/ 32px 32px, linear-gradient(315deg, #38ff5655 25%, transparent 25%) 0px 0/ 32px 32px, linear-gradient(45deg, #38ff56 25%, #41831b 25%) 0px 0/ 32px 32px;
+}
+
+
+.flash{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #48435C;
+  z-index: 10;
+  animation: flashAnim 1s ease-in-out;
+}
+
+.big-cercle{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #26ff59;
+  z-index: 10;
+  animation: big-cercle 750ms ease-in-out;
+}
+
+.bg-galaxy{
+  background-image: linear-gradient(to right top, #484354, #484061, #443e6f, #3e3c7d, #323a8c, #304da8, #2761c4, #0076e0, #00a3ff, #00c9f6, #00e8b6, #26ff59);
+  padding: 20px;
+}
+
+.shadow-star{
+  box-shadow: #69ff8c 0px 0px 100px;
+}
+
+@keyframes flashAnim {
+  0% {opacity: 0;}
+  100% {opacity: 1; display: none;}
+}
+
+@keyframes big-cercle {
+  0% {opacity: 0.7; transform: scale(1);}
+  100% {opacity: 1; transform: scale(300);}
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
