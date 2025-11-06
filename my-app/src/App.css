@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @theme {
   --color-custom-purple: #240D43; 
+  --color-custom-dark: #242424;
 }
 *{
   font-family: "Alan Sans", sans-serif;
@@ -47,35 +48,7 @@
   color: #888;
 }
 
-.project-card{
-  background-color: #242424;
-}
-
 .bg-gris{
   background: url('./assets/stars.jpg') no-repeat center center fixed;
   background-size: cover;
-}
-
-svg:has(.pathHover:hover){
-  transform: scale(1.1);
-}
-
-svg:has(+ .fillSquare:hover) {
-  transform: scale(1.1);
-}
-
-svg{
-  pointer-events: none;
-}
-
-path{
-  pointer-events: auto;
-}
-
-.fillSquare{
-  pointer-events: auto;
-}
-
-.projectWave{
-  pointer-events: none;
 }
