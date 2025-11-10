@@ -2,6 +2,7 @@
 @theme {
   --color-custom-purple: #240D43; 
   --color-custom-dark: #242424;
+  --color-custom-system: #48435C;
 }
 *{
   font-family: "Alan Sans", sans-serif;
@@ -25,12 +26,28 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
+.animation-back {
+  animation: inset-back 0.75s ease-in-out forwards;
+}
+.animation-back-left-bottom {
+  animation: inset-back-left-bottom 0.75s ease-in-out forwards;
+}
+
+@keyframes inset-back {
   from {
-    transform: rotate(0deg);
+    clip-path: circle(100% at center);
   }
   to {
-    transform: rotate(360deg);
+    clip-path: circle(8% at center);
+  }
+}
+
+@keyframes inset-back-left-bottom {
+  from {
+    clip-path: circle(100% at 10% 70%);
+  }
+  to {
+    clip-path: circle(8% at 10% 70%);
   }
 }
 
@@ -52,3 +69,4 @@
   background: url('./assets/stars.jpg') no-repeat center center fixed;
   background-size: cover;
 }
+
