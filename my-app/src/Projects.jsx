@@ -9,25 +9,25 @@ function Projects() {
   const [projects, setProjects] = useState([
     {
       title: "Planets Exploration App 🪐",
-      image: "./src/assets/projectsPlanet.gif",
+      image: "/Portfolio/src/assets/projectsPlanet.gif",
       url: "https://github.com/Biti-k/planetsReact",
       urlWebsite: "https://planetsreact.netlify.app/",
       description: "A web application that allows users to explore different planets in our solar system and outside of it using data from NASA APIs through my NodeJS backend (expressJS). ",
-      icons: ['./src/assets/icons/react.png', './src/assets/icons/tailwind.webp', './src/assets/icons/nodejs.png']
+      icons: ['/Portfolio/assets/icons/react.png', '/Portfolio/assets/icons/tailwind.webp', '/Portfolio/assets/icons/nodejs.png']
     },
     {
       title: "Race Manager App 🏃",
-      image: "./src/assets/projectRace.png",
+      image: "/Portfolio/src/assets/projectRace.png",
       url: "https://github.com/Biti-k/raceApp",
       description: "Final project for my studies in Web Development. A web application to manage racing events, including participant registration, race scheduling, and results tracking in live.",
-      icons: ['./src/assets/icons/laravel.png', './src/assets/icons/tailwind.webp', './src/assets/icons/react.png']
+      icons: ['/Portfolio/src/assets/icons/laravel.png', '/Portfolio/src/assets/icons/tailwind.webp', '/Portfolio/src/assets/icons/react.png']
     },
     {
       title: "Skate Shop E-commerce 🛹",
-      image: "./src/assets/skatey.png",
+      image: "/Portfolio/src/assets/skatey.png",
       url: "https://github.com/yourusername/project3",
       description: "An e-commerce website for a skate shop, featuring product listings and shopping cart functionality",
-      icons: ['./src/assets/icons/html.png', './src/assets/icons/javascript.png', './src/assets/icons/css.webp']
+      icons: ['/Portfolio/assets/icons/html.png', '/Portfolio/assets/icons/javascript.png', '/Portfolio/assets/icons/css.webp']
     },
   ]);
 
