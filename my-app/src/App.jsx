@@ -37,16 +37,17 @@ function App() {
   };
 
   return (
-    <div className='mainContainer overflow-hidden'>
-      <a>
+    <div className='mainContainer overflow-hidden flex md:flex-row flex-col items-start justify-center h-screen w-screen bg-custom-dark p-8 gap-6'>
+      <div className="md:w-[20%] w-full h-[300px] md:h-auto flex justify-center items-center">
         <img 
           src={galaxySvg} 
-          className="svgGalaxy animateGalaxy" 
+          className="svgGalaxy animateGalaxy md:w-[20vw] w-[75vw] h-auto cursor-pointer" 
           alt="Galaxy" 
           onClick={animateGalaxy} 
         />
-      </a>
-      <div ref={flashRef} className='flashOff'>
+      </div>
+
+      <div ref={flashRef} className='flashOff '>
         <div className='bg-green-400 rounded-full w-[12vw] h-[12vw] relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-star cursor-pointer'>
           <div
             className='bg-green-300 rounded-full w-[4vw] h-[4vw] relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping'
@@ -55,9 +56,9 @@ function App() {
           />
         </div>  
       </div>
-      <div className='ml-50 flex flex-col rounded-3xl' ref={welcomeTextRef}>
-        <h1 className='text-5xl mb-6'>Welcome to my Portfolio! :D</h1>
-        <p className="text-4xl text-green-300">Click on the galaxy to enter 🔭</p>
+      <div className='md:ml-10 flex flex-col rounded-3xl' ref={welcomeTextRef}>
+        <h1 className='md:text-5xl text-4xl mb-6'>Welcome to my Portfolio! :D</h1>
+        <p className="md:text-4xl text-3xl text-green-300">Click on the galaxy to enter 🔭</p>
       </div>
     </div>
   );
