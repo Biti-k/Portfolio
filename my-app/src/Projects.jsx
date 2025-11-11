@@ -37,7 +37,7 @@ function Projects() {
     {
       title: "Skate Shop E-commerce 🛹",
       image: skateImg,
-      url: "https://github.com/yourusername/project3",
+      url: "https://github.com/Biti-k/SkateyTienda",
       description: "An e-commerce website for a skate shop...",
       icons: [htmlIcon, jsIcon, cssIcon],
     },
