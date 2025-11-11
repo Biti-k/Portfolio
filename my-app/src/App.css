@@ -26,47 +26,4 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.animation-back {
-  animation: inset-back 0.75s ease-in-out forwards;
-}
-.animation-back-left-bottom {
-  animation: inset-back-left-bottom 0.75s ease-in-out forwards;
-}
-
-@keyframes inset-back {
-  from {
-    clip-path: circle(100% at center);
-  }
-  to {
-    clip-path: circle(8% at center);
-  }
-}
-
-@keyframes inset-back-left-bottom {
-  from {
-    clip-path: circle(100% at 10% 70%);
-  }
-  to {
-    clip-path: circle(8% at 10% 70%);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.bg-gris{
-  background: url('./assets/stars.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
 

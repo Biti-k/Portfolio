@@ -56,9 +56,9 @@ function Projects() {
       ref={holeContainer}
     >
       {/* 🔹 Fondo de ondas verdes */}
-      <div className="absolute inset-0 -z-10 animate-waveMove opacity-80 w-[200%] overflow-hidden">
+      <div className="absolute inset-0 -z-10 opacity-90 overflow-hidden">
         <svg
-          className="absolute bottom-0"
+          className="absolute bottom-0 sm:w-[250%] w-[3500%]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
@@ -69,7 +69,7 @@ function Projects() {
           ></path>
         </svg>
         <svg
-          className="absolute bottom-0 opacity-60 animate-waveMove2 w-[200%]"
+          className="absolute bottom-0 opacity-60 animate-waveMove2 sm:w-[250%] w-[3500%]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
@@ -84,21 +84,21 @@ function Projects() {
       {/* Pantalla verde de salida */}
       <div className='bg-green-400 absolute w-full h-full z-0 opacity-0 transition duration-1000 ' ref={greenScreen}></div>
 
-      <div className='absolute text-2xl z-10 text-white left-3 top-3 border-1 border-green-300 p-3 rounded-3xl cursor-pointer ' onClick={animateReturn}>
+      <div className='absolute text-2xl z-10 text-white bg-green-300/15 hover:bg-green-300/50 transition duration-200 left-3 top-3 border-1 border-green-300 p-3 rounded-3xl cursor-pointer ' onClick={animateReturn}>
         <p>Return <span>🚀</span></p>
       </div>
 
       {projects.map((project, index) => (
         <div
           key={index}
-          className='group project-card h-[300px] w-[75%] flex rounded-4xl p-2 shadow-green-300 shadow-xs hover:shadow-green-400 transition-all duration-300 opacity-0'
+          className="group project-card h-auto sm:h-[320px] w-[100%] sm:w-[80%] flex flex-col sm:flex-row rounded-3xl p-3 sm:p-5 backdrop-blur-md border border-white/20 hover:border-green-300/60 transition-all duration-500 shadow-md hover:shadow-lg hover:shadow-green-400/30 opacity-0"
           style={{
-            backgroundColor: `rgba(20, ${120 + index * 40}, 80, 0.9)`,
+            background: `linear-gradient(135deg, rgba(0,225,75,0.25), rgba(50,225,200,0.1))`,
             transform: 'translateY(20px)',
           }}
         >
-          <div className='flex items-center'>
-            <svg width="200" height="200" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+          <div className='flex justify-center sm:justify-start items-center sm:w-1/4'>
+            <svg className='sm:w-[250px] sm:h-[250px] w-[150px] h-[150px]' viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <path
                   id={`star-path-${index}`}
@@ -109,25 +109,24 @@ function Projects() {
                   <use href={`#star-path-${index}`} fill="white" />
                 </mask>
               </defs>
-
               <use href={`#star-path-${index}`} fill="#242424" transform="translate(0.01, 0.01)" />
               <image href={project.image} width="1" height="1" preserveAspectRatio="xMidYMid slice" mask={`url(#mask-${index})`} />
             </svg>
           </div>
 
-          <div className='px-10 w-full text-2xl mt-7 text-white overflow-hidden'>
-            <h2 className='text-4xl text-center font-bold mb-1'>{project.title}</h2>
-            <div className='flex'>
-              <p className=''>{project.description}</p>
-              <span className=''>
-                {project.icons && project.icons.map((icon, index) => (
-                  <img key={index} src={icon} alt="icon" className='inline-block w-8 h-8 mr-2 mt-2 object-contain' />
+          <div className='px-4 sm:px-10 w-full sm:w-2/3 text-base sm:text-2xl mt-3 sm:mt-4 text-white overflow-hidden'>
+            <h2 className='text-2xl sm:text-4xl text-center sm:text-left font-bold mb-1'>{project.title}</h2>
+            <div className='flex flex-col mb-3'>
+              <p className='text-sm sm:text-base'>{project.description}</p>
+              <div className='flex flex-wrap mt-2'>
+                {project.icons && project.icons.map((icon, idx) => (
+                  <img key={idx} src={icon} alt="icon" className='inline-block border-white/15 border bg-green-400/25 rounded-md w-7 h-7 sm:w-9 sm:h-9 mr-2 mt-2 object-contain' />
                 ))}
-              </span>
+              </div>
             </div>
-            <a href={project.url} className='font-bold text-cyan-200 hover:text-cyan-300 transition duration-300' target="_blank">Github Link! 📂</a><br />
+            <a href={project.url} className='font-bold text-amber-400 hover:text-cyan-300 transition duration-300' target="_blank">Github Link! 📂</a><br />
             {project.urlWebsite &&
-              <a href={project.urlWebsite} className='font-bold text-cyan-200 hover:text-cyan-300 transition duration-300' target="_blank">Website direct link 🌐</a>}
+              <a href={project.urlWebsite} className='font-bold text-amber-400 hover:text-cyan-300 transition duration-300' target="_blank">Website direct link 🌐</a>}
           </div>
         </div>
       ))}
