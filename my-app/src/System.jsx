@@ -47,7 +47,7 @@ function System() {
   return (
     <div className='h-full w-full overflow-hidden bg-custom-dark md:p-8 p-2'>
       <div className='flex flex-wrap'>
-        <div className='w-[100%] h-[33,33%] experience flex justify-end section transition duration-1000' style={{opacity:0}}>
+        <div className='w-[100%] h-[33,33%] experience flex justify-end section transition duration-500' style={{opacity:0}}>
           <div className='bg-purple-800 rounded-full  w-[25vh] h-[25vh]  shadow-experience cursor-pointer' onClick={goToExperience}>
             <RotatedText text="EXPERIENCE" angle={0} />
             <div
@@ -66,7 +66,7 @@ function System() {
             />
           </div> 
         </div>
-        <div className='w-[100%] h-auto about-me flex justify-start section duration-1000' style={{opacity:0}}>
+        <div className='w-[100%] h-auto about-me flex justify-start section duration-500' style={{opacity:0}}>
           <div className='bg-orange-400 rounded-full  w-[25vh] h-[25vh] shadow-about cursor-pointer' onClick={goToAboutMe} >
             <RotatedText text="ABOUT ME" angle={0} />
             <div
