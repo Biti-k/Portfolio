@@ -28,7 +28,7 @@ function Experience() {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-full h-auto w-full gap-4 px-4 py-5 sm:px-8 overflow-x-hidden text-white"
+      className="relative flex flex-col items-center justify-center min-h-full h-auto w-full gap-4 px-4 md:py-5 py-15 sm:px-8 overflow-x-hidden text-white"
       ref={containerRef}
     >
       {/* 🔹 Fondo de ondas violetas */}
@@ -67,12 +67,15 @@ function Experience() {
         ref={purpleScreen}
       ></div>
 
-      <div
-        className="absolute text-xl sm:text-2xl z-10 text-white left-3 top-3 border border-purple-300 p-2 sm:p-3 rounded-3xl cursor-pointer bg-purple-800/30 duration-200 hover:bg-purple-800/70 transition-all"
-        onClick={animateReturn}
-      >
-        <p>Return <span>🚀</span></p>
-      </div>
+      <div className='absolute md:left-3 md:top-3 top-3 left-0 w-full flex justify-center md:justify-start'>
+        <div
+            className="text-xl md:w-[25%] w-[60%] text-center sm:text-2xl z-10 text-white border border-purple-300  p-2 sm:p-3 rounded-3xl cursor-pointer  bg-purple-800/30 duration-200 hover:bg-purple-800/70  transition-all"
+            onClick={animateReturn}
+        >
+            <p>Return <span>🚀</span></p>
+        </div>
+    </div>
+
 
       {/* 🔸 Sección principal */}
       <div

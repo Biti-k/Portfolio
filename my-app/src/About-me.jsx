@@ -30,7 +30,7 @@ function AboutMe() {
 
   return (
     <div
-    className="relative flex flex-col items-center justify-center min-h-full h-auto w-full gap-4 px-4 py-5 sm:px-8 overflow-x-hidden text-white"
+    className="relative flex flex-col items-center justify-center min-h-full h-auto w-full gap-4 px-4 md:py-5 py-15 sm:px-8 overflow-x-hidden text-white"
     ref={containerRef}
     >
     {/* 🔹 Fondo de ondas rojas/naranjas */}
@@ -69,12 +69,15 @@ function AboutMe() {
         ref={redScreen}
     ></div>
 
-    <div
-        className="absolute text-xl sm:text-2xl z-10 text-white left-3 top-3 border border-yellow-300 p-2 sm:p-3 rounded-3xl cursor-pointer bg-red-500/25 duration-200 hover:bg-red-500/75 transition-all"
-        onClick={animateReturn}
-    >
-        <p>Return <span>🚀</span></p>
+    <div className='absolute md:left-3 md:top-3 top-3 left-0 w-full flex justify-center md:justify-start'>
+        <div
+            className="text-xl md:w-[25%] w-[60%] text-center sm:text-2xl z-10 text-white border border-yellow-300 p-2 sm:p-3 rounded-3xl cursor-pointer bg-red-500/25 duration-200 hover:bg-red-500/75 transition-all"
+            onClick={animateReturn}
+        >
+            <p>Return <span>🚀</span></p>
+        </div>
     </div>
+
 
     {/* 🔸 Sección principal */}
     <div className="about-section opacity-0 transform translate-y-6 border border-white/20 hover:border-red-500/50 hover:shadow-lg backdrop-blur-md group hover:shadow-yellow-400/50 p-4 sm:p-8 rounded-3xl shadow-lg shadow-yellow-400/30 w-[95%] sm:w-[80%] max-w-3xl transition-all duration-700"

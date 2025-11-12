@@ -45,6 +45,17 @@ function Projects() {
 
 
   useEffect(() => {
+    const element = holeContainer.current;
+    if (!element) return; // Evita el error si no existe
+
+    const rect = element.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    // Pasamos las coordenadas a CSS
+    document.documentElement.style.setProperty("--circle-x", `${x}px`);
+    document.documentElement.style.setProperty("--circle-y", `${y}px`);
+
     const cards = document.querySelectorAll('.project-card');
     cards.forEach((card, index) => {
       setTimeout(() => {
@@ -65,7 +76,7 @@ function Projects() {
 
   return (
     <div
-      className='relative flex justify-center items-center w-full flex-col gap-3 px-8 py-5 overflow-hidden min-h-screen h-auto'
+      className='relative flex justify-center items-center w-full flex-col gap-3 px-8 md:py-5 py-20 overflow-hidden min-h-screen h-auto'
       ref={holeContainer}
     >
       {/* 🔹 Fondo de ondas verdes */}
@@ -95,10 +106,12 @@ function Projects() {
       </div>
 
       {/* Pantalla verde de salida */}
-      <div className='bg-green-400 absolute w-full h-full z-0 opacity-0 transition duration-1000 ' ref={greenScreen}></div>
+      <div className='bg-green-400 absolute w-full h-full z-0 opacity-0 transition duration-1000' ref={greenScreen}></div>
 
-      <div className='absolute text-2xl z-10 text-white bg-green-300/15 hover:bg-green-300/50 transition duration-200 left-3 top-3 border-1 border-green-300 p-3 rounded-3xl cursor-pointer ' onClick={animateReturn}>
-        <p>Return <span>🚀</span></p>
+      <div className='absolute w-full flex h-auto md:left-3 md:top-3 top-2 left-0 md:justify-start justify-center'>
+        <div className='md:w-[10%] w-[60%]  text-2xl z-10 text-white bg-green-300/15 hover:bg-green-300/50 transition duration-200 border-1 border-green-300 p-3 rounded-3xl cursor-pointer ' onClick={animateReturn}>
+          <p className='text-center'>Return <span>🚀</span></p>
+        </div>
       </div>
 
       {projects.map((project, index) => (

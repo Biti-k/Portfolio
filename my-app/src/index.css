@@ -98,29 +98,35 @@ background: linear-gradient(135deg, #38ff5655 25%, transparent 25%) -16px 0/ 32p
 }
 
 .big-cercle{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed; /* ← en lugar de absolute */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* asegura que quede por encima de todo */
   background-color: #26ff59;
-  z-index: 10;
   animation: big-cercle 750ms ease-in-out;
 }
 
 .big-cercle-about-me{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed; /* ← en lugar de absolute */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* asegura que quede por encima de todo */
   background-color: #ffb326;
-  z-index: 10;
   animation: big-cercle 750ms ease-in-out;
 }
 
 .big-cercle-experience{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed; /* ← en lugar de absolute */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* asegura que quede por encima de todo */
   background-color: #851197;
-  z-index: 10;
   animation: big-cercle 750ms ease-in-out;
 }
 
@@ -200,39 +206,49 @@ background: linear-gradient(135deg, #38ff5655 25%, transparent 25%) -16px 0/ 32p
 }
 
 .animation-back {
-  animation: inset-back 0.75s ease-in-out forwards;
+  animation: inset-back 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+             fade-in 0.75s ease-in forwards;
 }
+
+@keyframes fade-in {
+  from { opacity: 0.7; filter: blur(2px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
 .animation-back-left-bottom {
-  animation: inset-back-left-bottom 0.75s ease-in-out forwards;
+  animation: inset-back-left-bottom 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+             fade-in 0.75s ease-in forwards;
 }
 .animation-back-right-top {
-  animation: inset-back-right-top 0.75s ease-in-out forwards;
+  animation: inset-back-right-top 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards,
+             fade-in 0.75s ease-in forwards;
 }
 
 @keyframes inset-back {
-  from {
-    clip-path: circle(100% at center);
+  0% {
+    clip-path: circle(120% at 50vw 50vh);
   }
-  to {
-    clip-path: circle(8% at center);
+  100% {
+    clip-path: circle(8% at 50vw 50vh);
   }
 }
 
+
 @keyframes inset-back-left-bottom {
   from {
-    clip-path: circle(100% at 10% 70%);
+    clip-path: circle(100% at 10vw 80vh);
   }
   to {
-    clip-path: circle(8% at 10% 70%);
+    clip-path: circle(8% at 10vw 80vh);
   }
 }
 
 @keyframes inset-back-right-top {
   from {
-    clip-path: circle(100% at 90% 15%);
+    clip-path: circle(100% at 90vw 15vh);
   }
   to {
-    clip-path: circle(8% at 90% 15%);
+    clip-path: circle(8% at 90vw 15vh);
   }
 }
 
