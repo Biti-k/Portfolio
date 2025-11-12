@@ -106,7 +106,7 @@ function Experience() {
           and enterprise solutions for recognized companies.  
           I also programmed the internal <b>intranet for time registration</b>.  
           <br /><br />
-          <span className="text-purple-300">Tech stack:</span> C#, AngularJS, jQuery, Microsoft SQL  
+          <span className="text-purple-300">Tech stack:</span> React, C#, AngularJS, jQuery, Microsoft SQL
           <br />
           <span className="italic text-sm">Full-time contract</span>
         </p>
